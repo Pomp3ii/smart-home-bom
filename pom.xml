@@ -20,6 +20,13 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>4.3.1</openapi-generator-maven-plugin.version>
+
+        <swagger-annotations.version>2.1.2</swagger-annotations.version>
+        <swagger-parser.version>2.0.20</swagger-parser.version>
+        <jackson-databind-nullable.version>0.2.1</jackson-databind-nullable.version>
+        <springdoc-openapi-ui.version>1.4.1</springdoc-openapi-ui.version>
+        <spring-cloud-dependencies.version>Hoxton.SR5</spring-cloud-dependencies.version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +44,37 @@
                         <artifactId>spring-boot-starter-test</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!--Spring Cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--Third Party Dependencies-->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.parser.v3</groupId>
+                <artifactId>swagger-parser</artifactId>
+                <version>${swagger-parser.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>${jackson-databind-nullable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
 
             <!--Test Dependencies-->
@@ -83,6 +121,11 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>${openapi-generator-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
