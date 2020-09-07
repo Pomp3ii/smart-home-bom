@@ -27,6 +27,7 @@
         <jackson-databind-nullable.version>0.2.1</jackson-databind-nullable.version>
         <springdoc-openapi-ui.version>1.4.1</springdoc-openapi-ui.version>
         <spring-cloud-dependencies.version>Hoxton.SR5</spring-cloud-dependencies.version>
+	<pi4j.version>1.2</pi4j.version>
     </properties>
 
     <dependencyManagement>
@@ -75,6 +76,16 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-ui</artifactId>
                 <version>${springdoc-openapi-ui.version}</version>
+            </dependency>
+	    <dependency>
+            	<groupId>com.pi4j</groupId>
+            	<artifactId>pi4j-gpio-extension</artifactId>
+            	<version>${pi4j.version}</version>
+            </dependency>
+            <dependency>
+            	<groupId>com.pi4j</groupId>
+	        <artifactId>pi4j-core</artifactId>
+	        <version>${pi4j.version}</version>
             </dependency>
 
             <!--Test Dependencies-->
